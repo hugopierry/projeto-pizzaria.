@@ -1,22 +1,21 @@
 import sqlite3
+import pandas as pd
 
+# O que foi feito e alterado nesse código: 
+# Nesse código, foi implementado o uso da biblioteca Pandas junto com SQL
+# Para poder melhorar a apresentação do conteúdo dos bancos de dados.
+# Deixando o código mais legível e mais objetivo em sua execução.
 
 conexao = sqlite3.connect("pizzaria.db")
-# concta ao banco
 
-cursor= conexao.cursor()
-# cria o cursor
+df = pd.read_sql_query(
+    "SELECT * FROM pizzas",conexao
+)
+# index=False: esconde a coluna de numeração (0, 1, 2...) criada pelo pandas
+print(df.to_string(index=False))
 
-cursor.execute("SELECT * FROM pizzas")
-
-ler_pizzas = cursor.fetchall()
-print("PIZZAS E VALORES".center(50))
-for ler_pizza in ler_pizzas:
-    print(f"Código: {ler_pizza[0]:<2}| Sabor: {ler_pizza [1]:<2} | Valor R$:{ler_pizza [2]:<2}")
-
-
-conexao.commit()
 conexao.close()
+
 
 
 
