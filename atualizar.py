@@ -1,25 +1,33 @@
 import sqlite3
 
+
 conexao = sqlite3.connect("pizzaria.db")
 cursor = conexao.cursor()
 
-codigo = int(input("Digite o código:"))
-sabor = input("Digite o sabor: ")
-preco = float(input("Preço R$: "))
-
-comando = "UPDATE pizzas SET sabor = ?, preco = ? WHERE codigo = ?"
-cursor.execute(comando, (sabor,preco,codigo))
-
-
-
-if cursor.rowcount > 0:
-    # rowcount serve para informar quantas linhas forma alteradas
-    print(f"\nPizza: {sabor} atualizada com sucesso!")
+try:
+    codigo = int(input("Digite o código:"))
+    sabor = input("Digite o sabor: ")
+    preco = float(input("Preço R$: "))   
+    comando = "UPDATE pizzas SET sabor = ?, preco = ? WHERE codigo = ?"
+    cursor.execute(comando, (sabor,preco,codigo))
+except ValueError:
+    print("Erro: digite um valor R$ válido")
 else:
-    print("Item não localizado com esse código")
-    # valida se existe ou não o código
+    if cursor.rowcount > 0:
+            # rowcount serve para informar quantas linhas forma alteradas
+        print(f"\nPizza: {sabor} atualizada com sucesso!")
+    else:
+        print("Item não localizado com esse código")
+            # valida se existe ou não o código
 
+    conexao.commit()
+finally:
+    conexao.close()
 
-conexao.commit()
-conexao.close()
-
+# Explicação do uso de try, except e finally no código.
+# try: executa um bloco de código que pode gerar exceções.
+# except: trata os erros especificados, como ValueError ao converter
+# uma entrada inválida para int ou float.
+# finally: executa a etapa de finalização independentemente de ocorrer
+# uma exceção ou não, sendo útil para liberar recursos, como fechar a conexão
+# com o banco de dados.
