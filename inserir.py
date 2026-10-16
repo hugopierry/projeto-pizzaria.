@@ -4,11 +4,12 @@ conexao = sqlite3.connect("pizzaria.db")
 cursor = conexao.cursor()
 
 resposta = "S"
-
+print("-"*60)
 # Laço de repetição (While) criado para controlar o fluxo do sistema.
 while resposta !="N":
-
+    print("-"*60)
     print("INSERIR PIZZA: " .center(50))
+    print("-"*60)
     codigo = int(input("\nDigite o código: "))
     sabor = input("Digite o sabor: ")
     preco = float(input("Preço R$: "))
@@ -21,5 +22,6 @@ while resposta !="N":
 conexao.commit()
 
 conexao.close()
+
 
 
