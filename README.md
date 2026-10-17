@@ -8,23 +8,40 @@ O programa simula um pequeno cadastro de pizzaria, permitindo armazenar e gerenc
 
 ## Funcionalidades
 
-- **`criar.py`** — cria o banco de dados e a tabela responsável por armazenar os registros das pizzas e suas respectivas colunas.
+- **`criar.py`** — cria o banco de dados e a tabela responsável por armazenar os registros das pizzas e suas respectivas colunas. Código para ser manipulado por desenvolvedor, não usuário.
 - **`inserir.py`** — cadastra novas pizzas, armazenando código, sabor e preço.
 - **`conferir.py`** — consulta e apresenta de forma organizada os dados cadastrados no banco de dados.
 - **`atualizar.py`** — permite atualizar o sabor e o preço de uma pizza, utilizando seu código para localizar o registro.
 - **`excluir.py`** — exclui uma pizza do banco de dados a partir do código informado.
+- **`main.py`** — ponto de entrada do sistema, com o menu interativo para executar as operações.
+
+## Como executar
+
+**1. Instale o pandas:**
+```
+pip install pandas
+```
+**2. Rode uma vez para gerar o banco:**
+```
+python criar.py
+```
+**3. Inicie o programa:**
+```
+python main.py
+```
 
 ## Tecnologias utilizadas
 
 - Python
-- SQLite
+- SQLite3
 - SQL
+- Pandas
 
-## Próximas melhorias
+## Roadmap
 
-1. Implementar tratamento de erros com `try`, `except` e `finally`.
-2. Criar um menu interativo no arquivo `main.py`, reunindo as operações CRUD em um único programa.
-3. Desenvolver um dashboard com Python, pandas e Streamlit para apresentar indicadores e gráficos a partir dos dados do banco de dados.
+1. [x] Implementar tratamento de erros com `try`, `except` e `finally`.
+2. [x] Criar um menu interativo no arquivo `main.py`, reunindo as operações CRUD em um único programa.
+3. [ ] Desenvolver um dashboard com Python, pandas e Streamlit para apresentar indicadores e gráficos a partir dos dados do banco de dados.
 
 ## Objetivo
 
