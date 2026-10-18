@@ -9,9 +9,11 @@ def atualizar():
     try:
         codigo = int(input("\nDigite o código:"))
         sabor = input("Digite o sabor: ")
-        preco = float(input("Preço R$: "))   
-        comando = "UPDATE pizzas SET sabor = ?, preco = ? WHERE codigo = ?"
-        cursor.execute(comando, (sabor,preco,codigo))
+        broto = float(input("Preço Broto R$: "))
+        media = float(input("Preço Média R$: ")) 
+        grande = float(input("Preço Grande  R$: "))
+        comando = "UPDATE pizzas SET sabor = ?, broto = ?,media = ?, grande =?  WHERE codigo = ?"
+        cursor.execute(comando, (sabor,broto,media,grande,codigo))
     except ValueError:
         print("Erro: digite um valor R$ válido")
     else:
