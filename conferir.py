@@ -17,7 +17,11 @@ def conferir():
     # index=False: esconde a coluna de numeração (0, 1, 2...) criada pelo pandas
     print(df.to_string(index=False))
     print("-"*60)
+    conexao.commit()
     conexao.close()
+
+    
+    
     
 
 
