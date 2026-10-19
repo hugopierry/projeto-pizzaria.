@@ -18,9 +18,11 @@ def inserir():
             print("-"*60)
             codigo = int(input("\nDigite o código: "))
             sabor = input("Digite o sabor: ")
-            preco = float(input("Preço R$: "))
-            comando_inserir = "INSERT INTO pizzas (codigo, sabor, preco) VALUES (?,?,?)"
-            cursor.execute(comando_inserir, (codigo,sabor,preco))
+            broto = float(input("Broto R$: "))
+            media = float(input("Média R$: "))
+            grande = float(input("Grande R$: "))
+            comando_inserir = "INSERT INTO pizzas (codigo, sabor, broto,media,grande) VALUES (?,?,?,?,?)"
+            cursor.execute(comando_inserir, (codigo,sabor,broto,media,grande))
             conexao.commit()
             
         except ValueError:
