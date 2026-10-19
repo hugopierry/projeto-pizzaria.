@@ -7,21 +7,21 @@ def inserir():
     cursor = conexao.cursor()
 
 
-    print("-"*60)
+   
     # Laço de repetição (While) criado para controlar o fluxo do sistema.
 
     resposta = "S"
     while resposta !="N":
         try:
-            print("-"*60)
+            
             print("INSERIR PIZZA: " .center(50))
-            print("-"*60)
+            print("="*60)
             codigo = int(input("\nDigite o código: "))
             sabor = input("Digite o sabor: ")
             broto = float(input("Broto R$: "))
             media = float(input("Média R$: "))
             grande = float(input("Grande R$: "))
-            comando_inserir = "INSERT INTO pizzas (codigo, sabor, broto,media,grande) VALUES (?,?,?,?,?)"
+            comando_inserir = 'INSERT INTO pizzas ("Código", "Sabor", "Broto", "Média", "Grande") VALUES (?, ?, ?, ?, ?)'
             cursor.execute(comando_inserir, (codigo,sabor,broto,media,grande))
             conexao.commit()
             

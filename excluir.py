@@ -4,8 +4,9 @@ import sqlite3
 def excluir():
     conexao = sqlite3.connect("pizzaria.db")
     cursor = conexao.cursor()
-
+    print("="*60)
     print("EXCLUIR PIZZA".center(50))
+    print("="*60)
 
     # 1. Pede o código
     try:
@@ -15,7 +16,7 @@ def excluir():
         conexao.close()
         return
     # 2. Consulta o banco
-    cursor.execute("SELECT * FROM pizzas WHERE codigo = ?", (codigo,))
+    cursor.execute("SELECT * FROM pizzas WHERE Código = ?", (codigo,))
     retorno = cursor.fetchone()
     print(retorno)
     # 3. Se não achou: avisa e encerra
@@ -27,7 +28,7 @@ def excluir():
     confirmacao = input("Deseja excluir? (s/n): ").strip().lower()
     # 5. Se "S": executa o DELETE e avisa
     if confirmacao == "s":
-        comando_excluir = "DELETE FROM pizzas WHERE codigo = ?"
+        comando_excluir = "DELETE FROM pizzas WHERE Código = ?"
         cursor.execute(comando_excluir, (codigo,))
         if cursor.rowcount > 0:
             print(f"\nPizza: {codigo}, excluida com sucesso!")
@@ -37,7 +38,7 @@ def excluir():
         # 6. Se não for "S": avisa que cancelou
         print("Exclusão cancelada!")
 
-        
+    print("="*60)   
                 
     conexao.commit()
     conexao.close()
