@@ -1,39 +1,20 @@
 import sqlite3
 
+from config import caminho_banco
 
-conexao = sqlite3.connect("pizzaria.db")
-cursor = conexao.cursor()
+# Script de setup: rodar só uma vez, manualmente (não passa pelo main.py).
+# Descomente apenas a migração que precisa e rode.
 
+conexao = sqlite3.connect(caminho_banco)
 
-# novas_colunas = [
-#     ("broto","REAL"),
-#     ("media","REAL"),
-#     ("grande","REAL")
-# ]
-# for nome, tipo in novas_colunas: 
-#     cursor.execute(f"ALTER TABLE pizzas ADD COLUMN {nome} {tipo}")
+try:
+    cursor = conexao.cursor()
 
-# df = df.rename(columns={
-#     "codigo":"CÓDIGO",
-#     "sabor": "SABOR",
-#     "broto": "BROTO (R$)",
-#     "media": "MÉDIA (R$)",
-#     "grande": "GRANDE (R$)"
+    # cursor.execute('ALTER TABLE pizzas ADD COLUMN "Tipo" TEXT')
+    # conexao.commit()
+    # print("Coluna adicionada com sucesso!")
 
+finally:
+    conexao.close()
 
-# })
-
-# criar_nova_coluna = """
-#     ALTER TABLE pizzas ADD Tipo ;
-# """
-# cursor.execute(criar_nova_coluna)
-# conexao.commit()
-# print("Colunas adicionada com sucesso!")
-# conexao.close()
-
-
-
-
-
-
-
+input("\nPressione ENTER para sair.")

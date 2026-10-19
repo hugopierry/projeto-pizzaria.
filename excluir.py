@@ -1,44 +1,43 @@
 import sqlite3
 
+from config import caminho_banco
+
 
 def excluir():
-    conexao = sqlite3.connect("pizzaria.db")
-    cursor = conexao.cursor()
-    print("="*60)
+    print("=" * 60)
     print("EXCLUIR PIZZA".center(50))
-    print("="*60)
+    print("=" * 60)
 
-    # 1. Pede o código
     try:
         codigo = int(input("Informe o código: "))
     except ValueError:
         print("Código não localizado, informe um código válido.")
-        conexao.close()
         return
-    # 2. Consulta o banco
-    cursor.execute("SELECT * FROM pizzas WHERE Código = ?", (codigo,))
-    retorno = cursor.fetchone()
-    print(retorno)
-    # 3. Se não achou: avisa e encerra
-    if retorno is None:
-        print(f"\nCódigo: '{codigo}' não localizado.")
-        conexao.close()
-        return
-    # 4. Se achou: pergunta a confirmação
-    confirmacao = input("Deseja excluir? (s/n): ").strip().lower()
-    # 5. Se "S": executa o DELETE e avisa
-    if confirmacao == "s":
-        comando_excluir = "DELETE FROM pizzas WHERE Código = ?"
-        cursor.execute(comando_excluir, (codigo,))
-        if cursor.rowcount > 0:
-            print(f"\nPizza: {codigo}, excluida com sucesso!")
-        else:
-            print("Pizza não excluída.")
-    else:
-        # 6. Se não for "S": avisa que cancelou
-        print("Exclusão cancelada!")
 
-    print("="*60)   
-                
-    conexao.commit()
-    conexao.close()
+    conexao = sqlite3.connect(caminho_banco)
+
+    try:
+        cursor = conexao.cursor()
+
+        cursor.execute("SELECT * FROM pizzas WHERE Código = ?", (codigo,))
+        retorno = cursor.fetchone()
+
+        if retorno is None:
+            print(f"\nCódigo: '{codigo}' não localizado.")
+            return
+
+        confirmacao = input("Deseja excluir? (s/n): ").strip().lower()
+
+        if confirmacao == "s":
+            cursor.execute("DELETE FROM pizzas WHERE Código = ?", (codigo,))
+            if cursor.rowcount > 0:
+                conexao.commit()
+                print(f"\nPizza: {codigo}, excluída com sucesso!")
+            else:
+                print("Pizza não excluída.")
+        else:
+            print("Exclusão cancelada!")
+
+        print("=" * 60)
+    finally:
+        conexao.close()

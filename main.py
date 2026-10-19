@@ -8,6 +8,7 @@
 # ===============================================================
 # Importando módulos
 
+
 from atualizar import atualizar
 from conferir import conferir
 from excluir import excluir
@@ -54,4 +55,8 @@ def menu():
 
 
 if __name__ == "__main__":
-    menu()
+    try:
+        menu()
+    except Exception as erro:
+        print(f"\n ❌ Erro inesperdo: {erro}")
+    input("\n\nPressione ENTER para sair do programa.")

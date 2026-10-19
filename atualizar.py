@@ -1,12 +1,13 @@
 
 import sqlite3
 
+from config import caminho_banco
 
 def atualizar():
     resposta = "S"
 
     while resposta != "N":
-        conexao = sqlite3.connect("pizzaria.db")
+        conexao = sqlite3.connect(caminho_banco)
         cursor = conexao.cursor()
 
         print("-" * 60)

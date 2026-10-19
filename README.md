@@ -1,19 +1,18 @@
-# 🍕 Projeto Pizzaria — Python e SQLite
-
 ## Sobre o projeto
 
 Este projeto foi desenvolvido para praticar a metodologia **CRUD (Create, Read, Update e Delete)** utilizando Python e SQLite.
 
-O programa simula um pequeno cadastro de pizzaria, permitindo armazenar e gerenciar informações como código, sabor e preço das pizzas em um banco de dados.
+O programa simula um pequeno cadastro de pizzaria, permitindo armazenar e gerenciar código, sabor, tipo (doce ou salgada) e um preço para cada tamanho (Broto, Média e Grande).
 
 ## Funcionalidades
 
-- **`criar.py`** — cria o banco de dados e a tabela responsável por armazenar os registros das pizzas e suas respectivas colunas. Código para ser manipulado por desenvolvedor, não usuário.
-- **`inserir.py`** — cadastra novas pizzas, armazenando código, sabor e preço.
+- **`criar.py`** — cria o banco de dados e a tabela `pizzas`. Uso exclusivo do desenvolvedor, rodado uma vez.
+- **`inserir.py`** — cadastra novas pizzas com código, sabor, tipo e os preços Broto, Média e Grande.
 - **`conferir.py`** — consulta e apresenta de forma organizada os dados cadastrados no banco de dados.
-- **`atualizar.py`** — permite atualizar o sabor e o preço de uma pizza, utilizando seu código para localizar o registro.
+- **`atualizar.py`** — atualiza sabor, tipo e os preços Broto, Média e Grande de uma pizza, localizada pelo código.
 - **`excluir.py`** — exclui uma pizza do banco de dados a partir do código informado.
 - **`main.py`** — ponto de entrada do sistema, com o menu interativo para executar as operações.
+- **`config.py`** — define o caminho do banco de dados, usado por todos os arquivos.
 
 ## Como executar
 
@@ -21,10 +20,12 @@ O programa simula um pequeno cadastro de pizzaria, permitindo armazenar e gerenc
 ```
 pip install pandas
 ```
-**2. Rode uma vez para gerar o banco:**
+
+**2. Crie o banco (só na primeira vez):**
 ```
 python criar.py
 ```
+
 **3. Inicie o programa:**
 ```
 python main.py

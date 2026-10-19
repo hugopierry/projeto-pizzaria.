@@ -1,9 +1,10 @@
 
 import sqlite3
+from config import caminho_banco
 
 
 def inserir():
-    conexao = sqlite3.connect("pizzaria.db")
+    conexao = sqlite3.connect(caminho_banco)
     cursor = conexao.cursor()
 
 

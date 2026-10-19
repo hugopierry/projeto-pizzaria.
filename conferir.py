@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+from config import caminho_banco
 
 def conferir():
     # O que foi feito e alterado nesse código: 
@@ -11,7 +12,7 @@ def conferir():
     print("="*60)
     print("📋 Nosso cardápio".center(50))
     print("-"*60)
-    conexao = sqlite3.connect("pizzaria.db")
+    conexao = sqlite3.connect(caminho_banco)
 
     df = pd.read_sql_query(
         "\nSELECT * FROM pizzas",conexao
