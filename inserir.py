@@ -21,8 +21,9 @@ def inserir():
             broto = float(input("Broto R$: "))
             media = float(input("Média R$: "))
             grande = float(input("Grande R$: "))
-            comando_inserir = 'INSERT INTO pizzas ("Código", "Sabor", "Broto", "Média", "Grande") VALUES (?, ?, ?, ?, ?)'
-            cursor.execute(comando_inserir, (codigo,sabor,broto,media,grande))
+            tipo = input("Digite o tipo da pizza (Doce/Salgada): ")
+            comando_inserir = 'INSERT INTO pizzas ("Código", "Sabor", "Broto", "Média", "Grande","Tipo") VALUES (?, ?, ?, ?, ?,?)'
+            cursor.execute(comando_inserir, (codigo,sabor,broto,media,grande,tipo))
             conexao.commit()
             
         except ValueError:

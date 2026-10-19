@@ -23,12 +23,12 @@ cursor = conexao.cursor()
 
 # })
 
-# alterar_colunas = """
-#     ALTER TABLE pizzas RENAME COLUMN grande TO Grande;
+# criar_nova_coluna = """
+#     ALTER TABLE pizzas ADD Tipo ;
 # """
-# cursor.execute(alterar_colunas)
+# cursor.execute(criar_nova_coluna)
 # conexao.commit()
-# print("Colunas editadas com sucesso!")
+# print("Colunas adicionada com sucesso!")
 # conexao.close()
 
 
