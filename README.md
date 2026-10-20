@@ -37,12 +37,17 @@ python main.py
 - SQLite3
 - SQL
 - Pandas
+- Power BI
 
 ## Roadmap
 
 1. [x] Implementar tratamento de erros com `try`, `except` e `finally`.
 2. [x] Criar um menu interativo no arquivo `main.py`, reunindo as operações CRUD em um único programa.
-3. [ ] Desenvolver um dashboard com Python, pandas e Streamlit para apresentar indicadores e gráficos a partir dos dados do banco de dados.
+3. [x] Desenvolver um dashboard no Power BI para apresentar indicadores e gráficos a partir dos dados do banco de dados.
+
+## Dashboard
+
+![Dashboard Pizzaria Python](imagens/dashboard.png)
 
 ## Objetivo
 
