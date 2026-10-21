@@ -24,23 +24,3 @@ Código,Sabor,Broto,Média,Grande,Tipo
 23,M&M's,30.9,44.9,56.9,Doce
 24,Churros,27.9,39.9,50.9,Doce
 25,Dois Amores,29.9,42.9,54.9,Doce
-41,Calabresa com Catupiry,29.9,42.9,53.9,Salgada
-42,Frango com Bacon,30.9,43.9,54.9,Salgada
-43,Presunto,26.9,38.9,48.9,Salgada
-44,Provolone,30.9,43.9,54.9,Salgada
-45,Gorgonzola,33.9,47.9,58.9,Salgada
-46,Brócolis com Bacon,29.9,41.9,52.9,Salgada
-47,Berinjela,28.9,40.9,50.9,Salgada
-48,Camarão,36.9,51.9,63.9,Salgada
-49,Mexicana,30.9,43.9,54.9,Salgada
-50,Baiana,29.9,42.9,52.9,Salgada
-51,Vegetariana,29.9,41.9,52.9,Salgada
-52,Costela com Cheddar,34.9,48.9,59.9,Salgada
-53,Nutella com Banana,31.9,45.9,56.9,Doce
-54,Abacaxi com Coco,27.9,39.9,49.9,Doce
-55,Maçã com Canela,26.9,38.9,48.9,Doce
-56,Leite Ninho com Nutella,32.9,46.9,57.9,Doce
-57,Bis,29.9,42.9,53.9,Doce
-58,Maracujá com Chocolate,29.9,42.9,53.9,Doce
-59,Chocolate com Avelã,30.9,44.9,55.9,Doce
-60,Leite Ninho com Morango,31.9,45.9,56.9,Doce

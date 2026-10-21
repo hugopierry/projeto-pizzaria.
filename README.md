@@ -13,6 +13,7 @@ O programa simula um pequeno cadastro de pizzaria, permitindo armazenar e gerenc
 - **`excluir.py`** — exclui uma pizza do banco de dados a partir do código informado.
 - **`main.py`** — ponto de entrada do sistema, com o menu interativo para executar as operações.
 - **`config.py`** — define o caminho do banco de dados, usado por todos os arquivos.
+- **`relatorio.py`** — lê a tabela `pizzas` do banco e exporta os dados para `pizzas_atualizado.csv`, com separador `;` e codificação `utf-8-sig`, para abrir no Excel com os acentos corretos.
 
 ## Como executar
 
@@ -44,6 +45,7 @@ python main.py
 1. [x] Implementar tratamento de erros com `try`, `except` e `finally`.
 2. [x] Criar um menu interativo no arquivo `main.py`, reunindo as operações CRUD em um único programa.
 3. [x] Desenvolver um dashboard no Power BI para apresentar indicadores e gráficos a partir dos dados do banco de dados.
+4. [x] Exportar os dados do banco para CSV pelo menu, com o relatório pronto para abrir no Excel.
 
 ## Dashboard
 

@@ -13,6 +13,7 @@ from atualizar import atualizar
 from conferir import conferir
 from excluir import excluir
 from inserir import inserir
+from relatorio import relatorio
 
 
 def menu():
@@ -26,6 +27,7 @@ def menu():
         print("2 - Conferir pizzas")
         print("3 - Excluir pizza")
         print("4 - Inserir pizza")
+        print("5 - Gerar relatório")
         print("0 - Sair")
 
         opcao = input("\nEscolha uma opção: ").strip()
@@ -43,6 +45,9 @@ def menu():
 
         elif opcao == "4":
             inserir()
+
+        elif opcao == "5":
+            relatorio()
 
         elif opcao == "0":
             print("\nSaindo do sistema...")
