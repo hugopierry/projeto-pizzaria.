@@ -1,8 +1,10 @@
 import sqlite3
+from pathlib import Path
 from config import caminho_banco
 import pandas as pd
 from time import sleep
 
+PASTA_PROJETO = Path(__file__).parent
 
 def relatorio():
     print("RELATÓRIO".center(50))
@@ -11,8 +13,11 @@ def relatorio():
         sleep(2)
         df = pd.read_sql_query("SELECT * FROM pizzas",conexao)
         print(df.to_string(index=False))
-        df.to_csv("pizzas_atualizado.csv",sep=";",index=False, encoding="utf-8-sig")
-        print("\n\nGerando gelatório...")
+
+        caminho_csv = PASTA_PROJETO / "pizzas_atualizado.csv"
+       
+        df.to_csv(caminho_csv,sep=";",index=False, encoding="utf-8-sig")
+        print("\n\nGerando relatório...")
         sleep(2)
         print("\nRelatório gerado e salvo com sucesso!")
     finally:
